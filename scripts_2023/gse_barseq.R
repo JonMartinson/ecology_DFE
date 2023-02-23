@@ -267,7 +267,7 @@ ggplot(gse_df_E_M_competition, aes(x = species_interact, y = Description, fill =
     ggtitle("Competitive Interaction")
 
 ggsave("plots/gse_heatmap_competitition.png",
-       dpi = 300, width = 8, height = 8)
+       dpi = 300, width = 8, height = 2.64)
 
 ###### 
 
