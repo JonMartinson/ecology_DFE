@@ -13,3 +13,14 @@ The gene annotations are from uniprot.
 ###NOTE####
 
 The all.poolcounts file is too big to upload to github so we'll have to figure out another way to add the data. 
+
+### ADD figure numbers on later draft ###
+
+The wetlab_growth.R script contains analysis for the wet lab components of the experiment --> number of generations, species fitness, and total population size (Figures XX, YY, ZZ).
+
+The gse_barseq.R script contains the gene set enrichment analysis and figures (Figure XX).
+
+The barseq_scatterplots_different_models_of_predicted_effect.R contains the analysis for fig 2. 
+
+The plot_individual_gene_fitness.R script contains the code to generate figures X, Y, Z.
+
