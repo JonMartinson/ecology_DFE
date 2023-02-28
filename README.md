@@ -32,3 +32,4 @@ rstatix
 ggpmisc
 clusterProfiler
 ggridges
+plater
