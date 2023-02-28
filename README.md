@@ -24,3 +24,11 @@ The barseq_scatterplots_different_models_of_predicted_effect.R contains the anal
 
 The plot_individual_gene_fitness.R script contains the code to generate figures X, Y, Z.
 
+## Required Libraries ##
+tidyverse
+lubridate
+ggpubr
+rstatix
+ggpmisc
+clusterProfiler
+ggridges
