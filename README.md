@@ -26,6 +26,7 @@ The plot_individual_gene_fitness.R script contains the code to generate figures 
 
 ## Required Libraries ##
 tidyverse
+
 lubridate
 ggpubr
 rstatix
