@@ -1,5 +1,5 @@
 # ecology_DFE
-Repo for data, code, and figures for paper, "Metabolic mutualism increases genetic robustness by reducing the severity of gene disruptions"
+Repo for data, code, and figures for "Metabolic mutualism increases genetic robustness by reducing the severity of gene disruptions"
 
 
 In order to recreate the analyses/figures in Martinson & Chacon 2023, download the repo and then open the DFE_analysis.Rproj.
