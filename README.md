@@ -6,7 +6,7 @@ In order to recreate the analyses/figures in Martinson & Chacon 2023, download t
 
 The files genes.GC and all.poolcount are derived from the FEBA barseq pipeline described in Wetmore 2015. 
 
-The gene annotations are from uniprot. 
+The Salmonella LT2 gene annotations were downloaded from uniprot.org. 
 
 # instructions go here --> 
 
