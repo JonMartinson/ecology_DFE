@@ -1,5 +1,6 @@
 
-source("/Users/jmartinson/Documents/Harcombe Lab/BarSeq/So_barseq_experiment_4_14_22/individual_knockouts_so/tecan_analysis_functions/growthcurve_functions.r")
+
+source("scripts_2023/tecan_analysis_functions/growthcurve_functions.r")
 
 read_tecan_csv = function(path, sep = ",",measure = "OD"){
   OD = read.table(path, sep = sep, as.is = TRUE, row.names = 1)
