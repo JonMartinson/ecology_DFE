@@ -73,9 +73,9 @@ A <- ile_normal %>%
     filter(media_type != "NA") %>%
     filter(media_type != "blank") %>%
     ggplot(aes(x = conc, y = adj_yield, color = media_type)) +
+    stat_summary(fun = mean, geom = "line", linewidth = 1) +
     geom_point(color = "black", size = .6) +
     geom_point(size = .03) +
-    stat_summary(fun = mean, geom = "line") +
     labs(x = "Isoleucine (mM)", y = "Normalized Yield", color = 'Carbon Source') +
     theme_bw(12) +
     scale_x_sqrt() +
@@ -85,16 +85,19 @@ B <- vitB5_normal %>%
     filter(media_type != "NA") %>%
     filter(media_type != "blank") %>%
     ggplot(aes(x = conc, y = adj_yield, color = media_type)) +
+    stat_summary(fun = mean, geom = "line", linewidth = 1) +
     geom_point(color = "black", size = .6) +
     geom_point(size = .03) +
-    stat_summary(fun = mean, geom = "line") +
     labs(x = "Vitamin B5 (µM)", y = "", color = 'Carbon Source')+
     theme_bw(12) +
     scale_x_sqrt() +
     scale_color_hue(labels = c('gal' = 'Galactose', 'succ' = 'Succinate')) 
 
 
-ggpubr::ggarrange(A, B, common.legend = T,labels = 'AUTO')
+saveRDS(object = A, file = 'rds_plots/isoleucine_gradient.rdata')
+saveRDS(object = B, file = 'rds_plots/vitamin_B5_gradient.rdata')
+
+ggpubr::ggarrange(A, B, common.legend = T)
 
 ggsave('plots/vitB5_ile_gradient_normalized_yield.png',
        dpi = 300, height = 2.6, width = 6)

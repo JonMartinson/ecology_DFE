@@ -62,10 +62,10 @@ df_all %>%
 df_simple <- df_all %>% 
     filter(Tube_Number %in% c('WH4', 'WH8')) %>% 
     mutate(
-        simple_descript = case_when(Tube_Number == 'WH4' ~ 'E spent media',
-                                    Tube_Number == 'WH8' ~ 'S grown in E spent media'))
+        simple_descript = case_when(Tube_Number == 'WH4' ~ 'E Spent Media',
+                                    Tube_Number == 'WH8' ~ 'S Grown in E Spent Media'))
 
-df_simple %>% 
+hplc_simple <- df_simple %>% 
     ggplot(aes(x = `Time (min)`, y = `Value (mAU)`))+
     geom_line() +
     xlim(0,5) +
@@ -75,3 +75,10 @@ df_simple %>%
 ggsave('plots/hplc_spent.png',
        dpi = 300, height = 2.6, width = 2.6)
 
+
+saveRDS(object = hplc_simple, file = 'rds_plots/hplc_simple.rdata')
+
+## requires running the plot_individual_gene_fitness.R and S_aceA_plate_reader.R scripts
+library(ggpubr)
+fig_6<- ggarrange(ace_gal, A, hplc_simple,ncol = 3, widths = c(1.2,1.5,1))
+ggsave(plot = fig_6,'plots/figure_6.pdf', width = 10, height =4)

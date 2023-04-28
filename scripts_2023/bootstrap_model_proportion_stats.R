@@ -120,6 +120,9 @@ mut_box_boot <- mut_all %>%
     lims(y = c(.5, 1))
 #    facet_wrap(~factor(type, levels = c('Additive', 'Strongest', 'Average')))
 
+saveRDS(object = mut_box_boot, file = 'rds_plots/mut_box_bootstrap.rdata')
+
+
 ####### competititive #####
 comp_models <- fitness %>%
     filter(ecology == "competition") %>%
@@ -192,13 +195,14 @@ comp_box_boot <- comp_all %>%
     lims(y = c(.5, 1))
 #    facet_wrap(~factor(type, levels = c('Additive', 'Strongest', 'Average')))
 
+saveRDS(object = comp_box_boot, file = 'rds_plots/comp_box_bootstrap.rdata')
 
 # r2 side by side
 
 ggpubr::ggarrange(mut_box_boot, comp_box_boot)  
 
 
-bind_rows(Competition = comp_all, Mutualism = mut_all, .id = "id") %>% 
+bootstrap_models_combined <- bind_rows(Competition = comp_all, Mutualism = mut_all, .id = "id") %>% 
     ggplot(aes(x = factor(type, levels = c('Additive', 'Strongest', 'Average')), y = r.squared, color = factor(type, levels = c('Additive', 'Strongest', 'Average')) ))+
     geom_boxplot() +
     theme_bw(12)+
@@ -206,6 +210,9 @@ bind_rows(Competition = comp_all, Mutualism = mut_all, .id = "id") %>%
     labs(x = '', y = 'R squared') +
     lims(y = c(.7, 1)) +
     facet_wrap(~factor(id, levels = c('Mutualism', 'Competition'))) 
+
+
+saveRDS(object = bootstrap_models_combined, file = 'rds_plots/bootstrap_models_combined.rdata')
 
 ggsave('plots/bootstrap_models.png',
        dpi = 300, height = 2, width = 4.5)

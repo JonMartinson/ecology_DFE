@@ -47,7 +47,7 @@ A <- fitness %>%
   scale_color_brewer(type = "qual", palette = 6, direction = -1)+
   geom_errorbar(width = 0, color = "gray")+
   geom_errorbarh(height = 0, color = "gray")+
-  annotate("text", x = c(-6, -1), y = c(1, -7.5), label = c("57", "28"))+
+  # annotate("text", x = c(-6, -1), y = c(1, -7.5), label = c("57", "28"))+
   geom_point(data = .%>%
                filter(padj_SE >= 0.05))+
   geom_point(data = .%>%
@@ -95,7 +95,7 @@ B <- fitness %>%
   
   geom_errorbar(width = 0, color = "gray")+
   geom_errorbarh(height = 0, color = "gray")+
-  annotate("text", x = c(-6, -1), y = c(1, -7.5), label = c("79", "17"))+
+  # annotate("text", x = c(-6, -1), y = c(1, -7.5), label = c("79", "17"))+
   geom_point(data = .%>%
                filter(padj_SM >= 0.05))+
   geom_point(data = .%>%
@@ -149,7 +149,7 @@ C <- fitness %>%
     scale_color_brewer(type = "qual", palette = 6, direction = -1)+
     geom_errorbar(width = 0, color = "gray")+
     geom_errorbarh(height = 0, color = "gray")+
-    annotate("text", x = c(-6, -1), y = c(1, -7.5), label = c("25", "50"))+ #these values are correct for comp
+    # annotate("text", x = c(-6, -1), y = c(1, -7.5), label = c("25", "50"))+ #these values are correct for comp
     geom_point(data = .%>%
                    filter(padj_SE >= 0.05))+
     geom_point(data = .%>%
@@ -200,7 +200,7 @@ D <- fitness %>%
     
     geom_errorbar(width = 0, color = "gray")+
     geom_errorbarh(height = 0, color = "gray")+
-    annotate("text", x = c(-6, -1), y = c(1, -7.5), label = c("0", "0"))+ # nothing significantly different
+    # annotate("text", x = c(-6, -1), y = c(1, -7.5), label = c("0", "0"))+ # nothing significantly different
     geom_point(data = .%>%
                    filter(padj_SM >= 0.05))+
     geom_point(data = .%>%
@@ -217,6 +217,14 @@ D <- fitness %>%
 
 
 
-ggpubr::ggarrange(A,B,C,D, labels = c('A','B','C','D'))
+multi_panel <- ggpubr::ggarrange(A,B,C,D)
+
+saveRDS(object = multi_panel, file = 'rds_plots/scatterplot_cocult_vs_mono.rdata')
+
+# bot <- ggpubr::annotate_figure(multi_panel,
+#                         left = ggpubr::text_grob('Competition                            ', rot = 90,face = 'bold' ))
+# 
+
+
 ggsave("./plots/all_interaction_scatter_with_sig_color.png",
        dpi = 300, width = 6, height = 6)

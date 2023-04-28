@@ -153,7 +153,7 @@ mut_ora <- mut_ora %>%
     mutate(focus = case_when(Description %in% special ~ 'special',
                              TRUE ~ 'not special'))
 
-mut_ora %>% 
+mut_ora_plot <- mut_ora %>% 
     mutate(species_interact = case_when(
         species_interact == 'ETRUE_mutualism' ~ 'E Effect',
         species_interact == 'MTRUE_mutualism' ~ 'M Effect'),
@@ -170,6 +170,8 @@ mut_ora %>%
     scale_color_brewer(palette = 2, type = 'qual')+
     guides(shape = FALSE)+
     theme_bw(12) 
+
+saveRDS(object =mut_ora_plot, file = 'rds_plots/mutualism_ORA.rdata')
 
 ggsave("plots/ORA_barseq.png",
        dpi = 300, width =8, height = 4)
