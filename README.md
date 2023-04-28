@@ -18,13 +18,11 @@ This code repository contains the necessary data and scripts to reproduce the ma
 3. Unzip the `all.poolcount.zip` file in the `data` folder to access the data required for calculating gene fitnesses.
 
 ## Fitness calculation
-To genenerate fitnesses from the all.poolcount file (an output of the Feba pipeline described here http://mbio.asm.org/content/6/3/e00306-15.full), run the 'mult_t0_pipeline.R' script located within the 'scripts_2023/pipeline' folder.
+To genenerate fitnesses from the `all.poolcount` file (an output of the Feba pipeline described here http://mbio.asm.org/content/6/3/e00306-15.full), run the `mult_t0_pipeline.R` script located within the `scripts_2023/pipeline` folder.
 
 ## Figures
 
 The figures are saved as gg objects and pdfs in the 'rds_plots' and 'pdf_plots' folders, respectively. 
-
-## Recreating Figures
 
 To recreate the figures, run the following scripts within the `scripts_2023` folder:
 
