@@ -14,7 +14,7 @@ This code repository contains the necessary data and scripts to reproduce the ma
 ## Getting Started
 
 1. Clone or download the repository to your local machine.
-2. If you are using R studio, open the R project file, `DFE_analyses.Rproj`. This will set up your working directories correctly, so there's no need to change them manually.
+2. If you are using R studio, open the R project file, `DFE_analyses.Rproj`. This will set up your working directories correctly, so there's no need to change them manually (tested on macos/linux).
 3. Unzip the `all.poolcount.zip` file in the `data` folder to access the data required for calculating gene fitnesses.
 
 ## Fitness calculation
