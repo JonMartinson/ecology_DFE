@@ -17,7 +17,7 @@ This code repository contains the necessary data and scripts to reproduce the ma
 2. If you are using R studio, open the R project file, `DFE_analyses.Rproj`. This will set up your working directories correctly, so there's no need to change them manually (tested on macos/linux).
 3. Unzip the `all.poolcount.zip` file in the `data` folder to access the data required for calculating gene fitnesses.
 
-## Fitness calculation
+## BarSeq Fitness calculations
 To genenerate fitnesses from the `all.poolcount` file (an output of the Feba pipeline described here http://mbio.asm.org/content/6/3/e00306-15.full), run the `mult_t0_pipeline.R` script located within the `scripts_2023/pipeline` folder.
 
 ## Figures
