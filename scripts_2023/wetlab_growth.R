@@ -2,6 +2,7 @@ rm(list = ls())
 
 library(tidyverse)
 library(lubridate)
+library(rstatix)
 
 #### initial data wrangling ####
 
@@ -119,7 +120,7 @@ target <- c("T2 S mut", "T3 SE mut","T5 SM mut","T5 SEM mut", 'S comp',"E comp",
 
 
 
-df %>% 
+generations_species <- df %>% 
     filter(str_detect(sample_names, target)) %>% 
     select(sample_names, sampling_timepoint,rep, ecology ,species_present ,S_generations, E_generations, M_generations) %>% 
     filter(rep != 6) %>% 
@@ -140,6 +141,8 @@ df %>%
     ylab("Generations")+
     theme(axis.text.x=element_text(angle=45, hjust=1), legend.position = 'none') +
     facet_grid(factor(species, levels = c('S','E', 'M'))~ factor(ecology, levels = c('Mutualism', 'Competition')))
+
+saveRDS(generations_species, file = 'rds_plots/generations_species.rdata')
 
 ggsave("plots/number_of_species_generationss_for_experimental_treatments.png",
        dpi = 300, width = 8, height = 4)
@@ -182,19 +185,21 @@ df_freq_long_target$sample_names<- str_remove(df_freq_long_target$sample_names,
 
 ## show frequency of species in each replicate for all treatments
 
-df_freq_long_target %>% 
+species_frequencies_end <- df_freq_long_target %>% 
     mutate(
            species = case_when(species == 'freq_E' ~ 'E',
                                species == 'freq_M' ~ 'M',
                                species == 'freq_S' ~ 'S')) %>% 
     filter(rep != 6) %>% #remove 6th replicate to avoid confusion since we only sequenced 5 reps
-    ggplot(aes(x = rep, y = species_frequency, fill = species)) +
+    ggplot(aes(x = rep, y = species_frequency, fill = factor(species, levels = c('S', 'E', 'M')))) +
     geom_col() + 
     labs(title = "Frequency of Species Engaged in Mutualism and Competition")+
     xlab("Replicate") +
     ylab("Species Frequency") +
     facet_grid(factor(species_present, levels = c('SE', 'SM', 'SEM'))~factor(ecology, levels = c('Mutualism', 'Competition')))+
     theme_bw(12)
+
+saveRDS(species_frequencies_end, file = 'rds_plots/species_frequencies_end.rdata')
 
 ggsave("plots/species_freqencies_all_reps.png",
        dpi = 300, width = 8, height = 4)
@@ -214,7 +219,7 @@ S_fitness <- df_freq_long_target %>%
     group_by(sampling_timepoint, rep, species_present, ecology) %>%
     summarise(fitness = log2(species_frequency) - log2(T0_S_freq_mean))
 
-S_fitness %>% 
+salmonella_fitness_barseq <- S_fitness %>% 
     filter(rep != 6) %>% 
     ggplot(aes(x = factor(species_present, levels = c('SE', 'SM', 'SEM')), y = fitness))+
     stat_summary(fun = mean, shape = '-', size = 3, color = 'black')+
@@ -225,6 +230,8 @@ S_fitness %>%
     theme(axis.text.x=element_text(angle=45, hjust=1), legend.position = 'none') +
     facet_wrap(~ factor(ecology, levels = c('Mutualism', 'Competition'))) +
     ggtitle("Salmonella fitness in communities of differing ecology")
+
+saveRDS(object = salmonella_fitness_barseq, file = 'rds_plots/salmonella_fitness_barseq.rdata' )
 
 ggsave("plots/Salmonella_species_fitness_in_comp_mut_treatments.png",
        dpi = 300, width = 8, height = 4)
@@ -247,7 +254,7 @@ df_total_long_target <- df_total_long %>%
     filter(str_detect(sample_names, target))
 
 ## all species
-df_total_long_target %>%
+total_pop_size_barseq <- df_total_long_target %>%
     mutate(
            species = case_when(species == 'E_total_CFU' ~ 'E',
                                species == 'M_total_CFU' ~ 'M',
@@ -264,10 +271,13 @@ df_total_long_target %>%
     theme(axis.text.x=element_text(angle=45, hjust=1), legend.position = 'none') +
     facet_grid(factor(species, levels = c('S','E', 'M'))~ factor(ecology, levels = c('Mutualism', 'Competition')))
 
+saveRDS(object = total_pop_size_barseq, file = 'rds_plots/total_pop_size_barseq.rdata')
+
+
 ggsave("plots/total_population_size_for_all_species.png",
        dpi = 300, width = 8, height = 4)
 
-library(rstatix)
+
 
 # there are significantly more cells in S cells in competitive S monouculture compared to competitive SM
 df_total_long_target %>% 
@@ -281,3 +291,17 @@ df_total_long_target %>%
     filter(species_present %in% c('S','SM')) %>% 
     ungroup() %>% 
     t_test(formula = species_total_cfu ~ species_present)
+
+
+df_total_long_target %>% 
+    filter(rep != 6) %>% 
+    mutate(
+        species = case_when(species == 'E_total_CFU' ~ 'E',
+                            species == 'M_total_CFU' ~ 'M',
+                            species == 'S_total_CFU' ~ 'S')) %>% 
+    filter(ecology == 'Competition') %>% 
+    filter(species == 'S') %>% 
+    filter(species_present %in% c('S','SM')) %>% 
+    ungroup() %>% 
+    ggplot(aes(species_present, species_total_cfu)) +
+    geom_boxplot()

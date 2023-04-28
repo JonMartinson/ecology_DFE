@@ -81,5 +81,40 @@ yield_summary %>%
 ggsave('plots/yield_S_mutants_spent_media.png',
        dpi = 300, height = 2, width = 6)
 
+EM_spent_ilvA_panC<- yield_summary %>% 
+    filter(mutation != "blank") %>% 
+    filter(!media_type %in% c('Galactose + Isoleucine', 'Galactose + Vitamin B5')) %>% 
+    ggplot(aes(x = mutation, y = mean_yield, fill = mutation))+
+    geom_bar(stat = "identity", color = "black", position =  position_dodge())+
+    geom_errorbar(aes(ymin=mean_yield, ymax = mean_yield + sd_yield), width = .5)+
+    labs(
+        x = "", y = "Max OD600")+
+    facet_wrap( ~factor(media_type, levels = 
+                            c("Galactose",
+                              "Filtered E spent media",
+                              "Filtered M spent media"))) +
+    theme_bw(12)+
+    theme(legend.position = "none")
 
-    
+saveRDS(object = EM_spent_ilvA_panC, file = 'rds_plots/EM_spent_ilvA_panC.rdata')
+
+ggsave('plots/yield_S_mutants_spent_media_no_supplementation.png',
+       dpi = 300, height = 2, width = 6)
+
+
+ilvA_panC_supplemented_yield <- yield_summary %>% 
+    filter(mutation != "blank") %>% 
+    filter(media_type %in% c('Galactose + Isoleucine', 'Galactose + Vitamin B5')) %>% 
+    ggplot(aes(x = mutation, y = mean_yield, fill = mutation))+
+    geom_bar(stat = "identity", color = "black", position =  position_dodge())+
+    geom_errorbar(aes(ymin=mean_yield, ymax = mean_yield + sd_yield), width = .5)+
+    labs(
+        x = "", y = "Max OD600")+
+    facet_wrap( ~factor(media_type, levels = 
+                            c("Galactose",
+                              'Galactose + Isoleucine',
+                              'Galactose + Vitamin B5'))) +
+    theme_bw(12)+
+    theme(legend.position = "none")
+
+saveRDS(ilvA_panC_supplemented_yield, file = 'rds_plots/ilvA_panC_supplemented_yield.rdata')
