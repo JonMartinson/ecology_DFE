@@ -1,7 +1,6 @@
 # Mutualism Reduces the Severity of Gene Disruptions in Predictable Ways Across Microbial Communities
 ![image](https://user-images.githubusercontent.com/69863285/235250401-e4a04097-b5f6-4edf-bba0-e56a6d054f4d.png)
 ### Authors:
-
 Jonathan N.V. Martinson, Jeremy M. Chacón, Brian A. Smith, Alex R. Villarreal, Ryan C. Hunter, William R. Harcombe
 
 ---
@@ -17,6 +16,9 @@ This code repository contains the necessary data and scripts to reproduce the ma
 1. Clone or download the repository to your local machine.
 2. If you are using R studio, open the R project file, `DFE_analyses.Rproj`. This will set up your working directories correctly, so there's no need to change them manually.
 3. Unzip the `all.poolcount.zip` file in the `data` folder to access the data required for calculating gene fitnesses.
+
+## Fitness calculation
+To genenerate fitnesses from the all.poolcount file (an output of the Feba pipeline described here http://mbio.asm.org/content/6/3/e00306-15.full), run the mult_t0_pipeline.R script located within the scripts_2023/pipeline folder.
 
 ---
 
