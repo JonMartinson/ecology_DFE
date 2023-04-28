@@ -18,7 +18,33 @@ This code repository contains the necessary data and scripts to reproduce the ma
 3. Unzip the `all.poolcount.zip` file in the `data` folder to access the data required for calculating gene fitnesses.
 
 ## Fitness calculation
-To genenerate fitnesses from the all.poolcount file (an output of the Feba pipeline described here http://mbio.asm.org/content/6/3/e00306-15.full), run the mult_t0_pipeline.R script located within the scripts_2023/pipeline folder.
+To genenerate fitnesses from the all.poolcount file (an output of the Feba pipeline described here http://mbio.asm.org/content/6/3/e00306-15.full), run the 'mult_t0_pipeline.R' script located within the 'scripts_2023/pipeline' folder.
+
+## Figures
+
+The figures are saved as gg objects and pdfs in the 'rds_plots' and 'pdf_plots' folders, respectively. 
+
+## Recreating Figures
+
+To recreate the figures, run the following scripts within the `scripts_2023` folder:
+
+| Figure      | Script                                             |
+|-------------|----------------------------------------------------|
+| Figure 1B,C | `barseq_dfe_analysis.R`                            |
+| Figure 2A   | `barseq_scatterplots_label_change.R`               |
+| Figure 2B   | `barseq_gene_effects_upset.R`                      |
+| Figure 3A   | `bootstrap_model_proportion_stats.R`               |
+| Figure 3B   | `barseq_dfe_analysis.R`                            |
+| Figure 4    | `ORA_barseq.R`                                     |
+| Figure 5    | `plot_individual_gene_fitness.R`                   |
+| Figure 6A   | `plot_individual_gene_fitness.R`                   |
+| Figure 6B   | `S_aceA_plate_reader_figure_modified.R`            |
+| Figure 6C   | `hplc_plots.R`                                     |
+| Figure 7A   | `plot_individual_gene_fitness.R`                   |
+| Figure 7B   | `salmonella_mutant_ilvA_panC_spent_media_endpoint_OD.R` |
+| Figure 7C   | `ile_vitB5_gradient_analysis.R`                    |
+| Figure 7D   | `spent_assay_ilvA_panC_20230417.R`                 |
+
 
 ---
 
