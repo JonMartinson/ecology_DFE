@@ -46,7 +46,9 @@ To recreate the figures, run the following scripts within the `scripts_2023` fol
 | Supp. Fig. 2 | `analysis_plate_growth_20230406.R`    *             |
 | Supp. Fig. 3A,B | `heat_map_model_effect_on_genes.R`  |
 | Supp. Fig. 4 | `salmonella_mutant_ilvA_panC_spent_media_endpoint_OD.R` |
+
 *Lawn density values calculated in `lawn_analysis_for_ecology_dfe_paper.ipynb`. The raw scanner images are available upon request.
+
 ---
 
 ## Required R Packages
