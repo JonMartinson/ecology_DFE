@@ -18,7 +18,7 @@ This code repository contains the necessary data and scripts to reproduce the ma
 3. Unzip the `all.poolcount.zip` file in the `data` folder to access the data required for calculating gene fitnesses.
 
 ## BarSeq Fitness calculations
-To genenerate fitnesses from the `all.poolcount` file (an output of the Feba pipeline described here doi.org/10.1128/mBio.00306-15), run the `mult_t0_pipeline.R` script located within the `scripts_2023/pipeline` folder. Fitness calculations are a hybrid of the methods used in doi.org/10.1128/mBio.00306-15 and doi.org/10.1038/s41564-020-00800-z . 
+To genenerate fitnesses from the `all.poolcount` file (an output of the Feba pipeline described here doi.org/10.1128/mBio.00306-15), run the `mult_t0_pipeline.R` script located within the `scripts_2023/pipeline` folder. Fitness calculations are a hybrid of the methods used in doi.org/10.1128/mBio.00306-15 and doi.org/10.1038/s41564-020-00800-z. Alternatively, the calculated fitnesses are available in the `fitness.Rdata` file. 
 
 ## Figures
 
