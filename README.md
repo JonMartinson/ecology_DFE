@@ -7,7 +7,9 @@ Jonathan N.V. Martinson, Jeremy M. Chacón, Brian A. Smith, Alex R. Villarreal, 
 
 ## Repository Overview
 
-This code repository contains the necessary data and scripts to reproduce the main figures and analyses presented in the manuscript, "Mutualism Reduces the Severity of Gene Disruptions in Predictable Ways Across Microbial Communities." To reproduce the analyses, clone or download the project and follow the instructions provided below.
+This code repository contains the necessary data and scripts to reproduce the main figures and analyses presented in the manuscript, "Mutualism Reduces the Severity of Gene Disruptions in Predictable Ways Across Microbial Communities." https://www.biorxiv.org/content/10.1101/2023.05.08.539835v1
+
+To reproduce the analyses, clone or download the project and follow the instructions provided below.
 
 ---
 
