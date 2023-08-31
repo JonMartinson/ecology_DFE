@@ -1,4 +1,4 @@
-# Mutualism Reduces the Severity of Gene Disruptions in Predictable Ways Across Microbial Communities
+# Mutualism reduces the severity of gene disruptions in predictable ways across microbial communities
 ![image](https://user-images.githubusercontent.com/69863285/235250401-e4a04097-b5f6-4edf-bba0-e56a6d054f4d.png)
 ### Authors:
 Jonathan N.V. Martinson, Jeremy M. Chacón, Brian A. Smith, Alex R. Villarreal, Ryan C. Hunter, William R. Harcombe
