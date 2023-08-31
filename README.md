@@ -1,13 +1,19 @@
 # Mutualism reduces the severity of gene disruptions in predictable ways across microbial communities
-![image](https://user-images.githubusercontent.com/69863285/235250401-e4a04097-b5f6-4edf-bba0-e56a6d054f4d.png)
+![image](https://github.com/JonMartinson/ecology_DFE/assets/69863285/7333fa85-5871-40aa-94d5-948f42102be5)
+
+
 ### Authors:
-Jonathan N.V. Martinson, Jeremy M. Chacón, Brian A. Smith, Alex R. Villarreal, Ryan C. Hunter, William R. Harcombe
+Jonathan N.V. Martinson☼, Jeremy M. Chacón☼, Brian A. Smith, Alex R. Villarreal, Ryan C. Hunter, William R. Harcombe
+
+☼ contributed equally
 
 ---
 
 ## Repository Overview
 
 This code repository contains the necessary data and scripts to reproduce the main figures and analyses presented in the manuscript, "Mutualism Reduces the Severity of Gene Disruptions in Predictable Ways Across Microbial Communities." https://www.biorxiv.org/content/10.1101/2023.05.08.539835v1
+
+Raw sequencing data is available in the NCBI BioProject PRJNA1008691.
 
 ---
 
@@ -26,28 +32,31 @@ The figures are saved as gg objects and pdfs in the 'rds_plots' and 'pdf_plots' 
 
 To recreate the figures, run the following scripts within the `scripts_2023` folder:
 
-| Figure      | Script                                             |
-|-------------|----------------------------------------------------|
-| Figure 1B,C | `barseq_dfe_analysis.R`                            |
-| Figure 2A   | `barseq_scatterplots_label_change.R`               |
-| Figure 2B   | `barseq_gene_effects_upset.R`                      |
-| Figure 3A   | `bootstrap_model_proportion_stats.R`               |
-| Figure 3B   | `barseq_dfe_analysis.R`                            |
-| Figure 4    | `ORA_barseq.R`                                     |
-| Figure 5    | `plot_individual_gene_fitness.R`                   |
-| Figure 6A   | `plot_individual_gene_fitness.R`                   |
-| Figure 6B   | `S_aceA_plate_reader_figure_modified.R`            |
-| Figure 6C   | `hplc_plots.R`                                     |
-| Figure 7A   | `plot_individual_gene_fitness.R`                   |
-| Figure 7B   | `salmonella_mutant_ilvA_panC_spent_media_endpoint_OD.R` |
-| Figure 7C   | `ile_vitB5_gradient_analysis.R`                    |
-| Figure 7D   | `spent_assay_ilvA_panC_20230417.R`                 |
-| Supp. Fig. 1 | `wetlab_growth.R`                                  |
-| Supp. Fig. 2 | `analysis_plate_growth_20230406.R`    *             |
-| Supp. Fig. 3A,B | `heat_map_model_effect_on_genes.R`  |
-| Supp. Fig. 4 | `salmonella_mutant_ilvA_panC_spent_media_endpoint_OD.R` |
+| Figure     | Script                                                      |
+|------------|-------------------------------------------------------------|
+| Figure 1A  | NA -- diagram                                             |
+| Figure 1B,C| `01_barseq_dfe_analysis.R`                                  |
+| Figure 2   | `02_barseq_scatterplots_barcharts.R`                        |
+| Figure 3   | `03_bootstrap_model_proportion_stats.R`                     |
+| Figure 4A  | `04_ORA_barseq.R`                                           |
+| Figure 4B,C| `05_plot_individual_gene_fitness.R`                         |
+| Figure 5A  | `05_plot_individual_gene_fitness.R`                         |
+| Figure 5B  | `06_salmonella_mutant_ilvA_panC_spent_media_endpoint_OD.R`  |
+| Figure 5C  | `07_ile_vitB5_gradient_analysis.R`                          |
+| Figure 5D  | `08_Salmonella_spent_assay_ilvA_panC.R`                     |
+| Figure S1  | NA -- diagram                                             |
+| Figure S2  | `09_agar_scanner_growth.R`                                  |
+| Figure S3  | `10_wetlab_growth.R`                                        |
+| Figure S4  | `11_median_fitness_effect.R`                                |
+| Figure S5  | `12_heat_map_model_effect_on_genes.R`                       |
+| Figure S6A | `13_S_aceA_plate_reader.R`                                  |
+| Figure S6B | `14_hplc_plots.R`                                           |
+| Figure S7  | `15_spent_media_pdxB_nadC_thiE.R`                           |
+| Figure S8  | `16_mean_fitness_vs_mean_growth_rate.R`                     |
 
 *Lawn density values calculated in `lawn_analysis_for_ecology_dfe_paper.ipynb`. The raw scanner images are available upon request.
+
+To save the plots as pdfs with consistent sizing use: `17_combined_plot_panels.R`
 
 ---
 
@@ -58,13 +67,15 @@ Before running the scripts, ensure you have the following R packages installed:
 - `tidyverse`: A collection of R packages designed for data science.
 - `lubridate`: Functions to work with date-time data.
 - `ggpubr`: Functions for creating publication-ready plots.
+- `ggtext`: Enhances text rendering in `ggplot2` plots, allowing markdown formatting.
 - `rstatix`: Functions for performing various statistical tests.
 - `ggpmisc`: Miscellaneous functions for `ggplot2`.
 - `clusterProfiler`: Tools for functional enrichment analysis.
 - `ggridges`: Functions for creating ridgeline plots.
 - `plater`: A package for working with plate-based data.
 
+
 To install the required packages, run the following command in your R console:
 
 ```R
-install.packages(c("tidyverse", "lubridate", "ggpubr", "rstatix", "ggpmisc", "clusterProfiler", "ggridges", "plater"))
+install.packages(c("tidyverse", "lubridate", "ggpubr", "rstatix", "ggpmisc", "clusterProfiler", "ggridges", "plater", "ggtext"))
