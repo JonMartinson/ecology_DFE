@@ -28,7 +28,7 @@ To genenerate fitnesses from the `all.poolcount` file (an output of the Feba pip
 
 ## Figures
 
-The figures are saved as gg objects and pdfs in the 'rds_plots' and 'pdf_plots' folders, respectively. 
+The figures are saved as ggplot objects and pdfs in the 'rds_plots' and 'pdf_plots' folders, respectively. 
 
 To recreate the figures, run the following scripts within the `scripts_2023` folder:
 
