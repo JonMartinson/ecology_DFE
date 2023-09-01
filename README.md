@@ -1,5 +1,6 @@
 # Mutualism reduces the severity of gene disruptions in predictable ways across microbial communities
-![Screenshot 2023-09-01 at 9 27 26 AM](https://github.com/JonMartinson/ecology_DFE/assets/69863285/fdf2c7d8-4d77-4684-8cfa-ca97ebff22c8)
+![image](https://github.com/JonMartinson/ecology_DFE/assets/69863285/52bc0e9b-cfd6-49e4-b154-c20a5391edfc)
+
 
 
 
