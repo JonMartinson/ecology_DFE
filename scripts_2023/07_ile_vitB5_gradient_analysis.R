@@ -76,7 +76,7 @@ A <- ile_normal %>%
     stat_summary(fun = mean, geom = "line", linewidth = 1) +
     geom_point(color = "black", size = .6) +
     geom_point(size = .03) +
-    labs(x = "Isoleucine (mM)", y = "Normalized yield", color = 'Carbon source') +
+    labs(x = "Isoleucine (mM)", y = "Relative final density", color = 'Carbon source') +
     theme_bw(12) +
     scale_x_sqrt() +
     scale_color_hue(labels = c('gal' = 'Galactose', 'succ' = 'Succinate')) +

@@ -75,7 +75,7 @@ A <- OD_lab2 %>%
     ggplot(aes(x = hour, y = OD , group = well, color = mutation))+
     geom_line()+
     #ggtitle(label = "Growth curves of S WT and S aceA mutant")+
-    labs(y = 'Absorbance (OD~600~)')+
+    labs(y = 'Optical density (600 nm)')+
     scale_y_log10()+
     theme_bw(12)+
     labs(color = 'Genotype', x = 'Time (hours)') +
@@ -141,7 +141,7 @@ C <- loglin_gr_meta %>%
     stat_summary(fun = mean, shape = '-', size = 3, color = 'black')+
     theme_bw(12)+
     theme(legend.position = 'none')+
-    labs(x = "", y = "Absorbance (OD~600~)", color = 'Genotype')+
+    labs(x = "", y = "Optical density (600 nm)", color = 'Genotype')+
     facet_wrap(~ factor(media_type, levels = media_levels)) +
     theme(panel.grid.major = element_blank(),
           panel.grid.minor = element_blank(),

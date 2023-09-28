@@ -109,7 +109,7 @@ BEI_spent_media <- od_yield_summary_2 %>%
     geom_errorbar(aes(ymin = mean_yield, ymax = mean_yield + sd_yield), position = position_dodge(0.9), width = 0.5)+
     geom_bar(stat = 'identity', color = 'black', position = position_dodge()) +
     theme_bw(12) +
-    labs(x = '', y = 'Absorbance (OD~600~)', fill = 'Media type') +
+    labs(x = '', y = 'Optical density (600 nm)', fill = 'Media type') +
     theme(panel.grid.major = element_blank(),
           panel.grid.minor = element_blank(),
           strip.background = element_rect(fill = "white"),

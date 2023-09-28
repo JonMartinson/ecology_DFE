@@ -186,7 +186,7 @@ S_spent_media_ilvA_panC<- OD_yield %>%
   geom_bar(stat = 'identity', color = 'black', position = position_dodge())+
   geom_errorbar(aes(ymin = mean_yield, ymax = mean_yield + sd_yield), width = 0.5)+
   labs(
-    x = '', y = "Absorbance (OD~600~)"
+    x = '', y = "Optical density (600 nm)"
   )+
   facet_wrap(~factor(carbon,
                      levels = c("Filtered S galactose spent media","Filtered S succinate spent media" ))) +

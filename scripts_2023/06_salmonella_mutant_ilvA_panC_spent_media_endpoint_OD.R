@@ -68,7 +68,7 @@ yield_summary %>%
     geom_bar(stat = "identity", color = "black", position =  position_dodge())+
     geom_errorbar(aes(ymin=mean_yield, ymax = mean_yield + sd_yield), width = .5)+
     labs(
-        x = "", y = "Absorbance (OD~600~)")+
+        x = "", y = "Optical density (600 nm)")+
     facet_wrap( ~factor(media_type, levels = 
                             c("Galactose",
                               "Galactose + Isoleucine",
@@ -96,7 +96,7 @@ EM_spent_ilvA_panC<- yield_summary %>%
     geom_bar(stat = "identity", color = "black", position =  position_dodge())+
     geom_errorbar(aes(ymin=mean_yield, ymax = mean_yield + sd_yield), width = .5)+
     labs(
-        x = "", y = "Absorbance (OD~600~)")+
+        x = "", y = "Optical density (600 nm)")+
     facet_wrap( ~factor(media_type, levels = 
                             c("Galactose",
                               "Filtered E spent media",
@@ -125,7 +125,7 @@ ilvA_panC_supplemented_yield <- yield_summary %>%
     geom_bar(stat = "identity", color = "black", position =  position_dodge())+
     geom_errorbar(aes(ymin=mean_yield, ymax = mean_yield + sd_yield), width = .5)+
     labs(
-        x = "", y = "Absorbance (OD~600~)")+
+        x = "", y = "Optical density (600 nm)")+
     facet_wrap( ~factor(media_type, levels = 
                             c("Galactose",
                               'Galactose + Isoleucine',
