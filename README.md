@@ -57,10 +57,11 @@ To recreate the figures, run the following scripts within the `scripts_2023` fol
 | Figure S7  | `15_spent_media_pdxB_nadC_thiE.R`                           |
 | Figure S8  | `16_mean_fitness_vs_mean_growth_rate.R`                     |
 
-*Lawn density values calculated in `lawn_analysis_for_ecology_dfe_paper.ipynb`. The raw scanner images are available upon request.
-Additionally, we made a commandline python program for analyzing the scanner lawn densities: `scripts_2023/lawn_density_test`. `set_up_lawn_density.txt` contains instructions for use on a cluster or local terminal. `example_images/` contains a subset of the scanner images used in the experiment (note that the .tif files are compressed). 
-
 To save the plots as pdfs with consistent sizing use: `17_combined_plot_panels.R`
+
+*Lawn density values calculated in `lawn_analysis_for_ecology_dfe_paper.ipynb`. The raw scanner images are available upon request. Additionally, we made a commandline python program for analyzing the scanner lawn densities: `scripts_2023/lawn_density_test`. `set_up_lawn_density.txt` contains instructions for use on a cluster or local terminal. `example_images/` contains a subset of the scanner images used in the experiment (note that the .tif files are compressed). 
+
+
 
 ---
 
