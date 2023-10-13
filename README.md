@@ -47,8 +47,8 @@ To recreate the figures, run the following scripts within the `scripts_2023` fol
 | Figure 5B  | `06_salmonella_mutant_ilvA_panC_spent_media_endpoint_OD.R`  |
 | Figure 5C  | `07_ile_vitB5_gradient_analysis.R`                          |
 | Figure 5D  | `08_Salmonella_spent_assay_ilvA_panC.R`                     |
-| Figure S1  | NA -- diagram                                             |
-| Figure S2  | `09_agar_scanner_growth.R`                                  |
+| Figure S1  | NA -- diagram                                              |
+| Figure S2  | `09_agar_scanner_growth.R` *                                 |
 | Figure S3  | `10_wetlab_growth.R`                                        |
 | Figure S4  | `11_median_fitness_effect.R`                                |
 | Figure S5  | `12_heat_map_model_effect_on_genes.R`                       |
